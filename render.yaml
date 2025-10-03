@@ -24,3 +24,5 @@ services:
     envVars:
       - key: VITE_GOOGLE_API_KEY
         value: "AIzaSyCGxv_Wa2v3kmtyaXMZhfNOjErfMrm2BVQ"
+      - key: VITE_BACKEND_URL
+        value: "https://psychiatrist-backend-tayx.onrender.com"

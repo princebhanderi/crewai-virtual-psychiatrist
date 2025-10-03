@@ -18,7 +18,7 @@ const NavBar = ({ isAuthenticated, setIsAuthenticated }) => {
   
     try {
       const response = await axios.post(
-        "http://localhost:8000/logout/",
+        `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'}/logout/`,
         {},
         {
           withCredentials: true, // Ensure cookies are included

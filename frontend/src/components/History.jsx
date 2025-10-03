@@ -20,7 +20,7 @@ const History = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch("http://localhost:8000/chat/", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'}/chat/`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -102,7 +102,7 @@ const History = () => {
       setMessages(prev => [...prev, userMessage]);
       setHasHistory(true);
 
-      const response = await fetch("http://localhost:8000/chat/", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'}/chat/`, {
         method: "POST",
         credentials: "include",
         headers: {
