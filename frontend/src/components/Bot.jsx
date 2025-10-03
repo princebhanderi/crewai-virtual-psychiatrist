@@ -44,7 +44,7 @@ const Bot = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("http://localhost:8000/chat/", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'}/chat/`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -215,7 +215,7 @@ const Bot = () => {
     try {
       setMessages((prev) => [...prev, userMessage]);
 
-      const response = await fetch("http://localhost:8000/chat/", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'}/chat/`, {
         method: "POST",
         credentials: "include",
         headers: {
