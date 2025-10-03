@@ -9,11 +9,8 @@ services:
     startCommand: "crewai run"
     envVars:
       - key: MONGO_URI
-        fromSecret: true
       - key: DB_NAME
-        fromSecret: true
       - key: VITE_GOOGLE_API_KEY
-        fromSecret: true
 
   # Frontend Service
   - type: web
@@ -25,4 +22,3 @@ services:
     startCommand: "npx serve -s dist -l 3000"
     envVars:
       - key: VITE_GOOGLE_API_KEY
-        fromSecret: true
