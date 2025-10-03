@@ -1,0 +1,56 @@
+assess_and_respond:
+  description: >
+    Based on the student's background ({context}) and their current struggle ({student_issue}),
+    write a natural, heartfelt 2–3 line message that:
+    1. Offers gentle encouragement or a simple helpful idea
+    2. Ends with a soft, open-ended question that invites honest engagement
+    The response should flow like something a caring mentor or friend might say — not like a machine or therapist. Keep it warm, conversational, and very human.
+
+  expected_output: >
+    A warm, conversational 2–3 sentence message that:
+    - Acknowledges the student’s feelings in a natural way
+    - Ends with a casual, thoughtful question that keeps the door open
+
+  agents: [psychiatrist, counselor, wellness_coach]
+
+  workflow: >
+    1. Psychiatrist gently assesses the student's concern with empathy
+    2. Wellness coach suggests a low-effort, realistic next step or motivation cue
+    3. Counselor blends the insight into a smooth, very human message ending with an open question
+
+  tone_guidelines:
+    happy: "Match their energy — keep it upbeat and encouraging. Ask how they’d like to channel the good vibe."
+    anxious: "Use calm, steady, and clear language. Help slow things down. Ask about where they can start."
+    sad: "Be gentle and warm — like a friend sitting beside them. Ask about what might feel okay right now."
+    neutral: "Stay grounded and supportive. Focus on realistic next steps. Ask about their usual way of handling things."
+
+  engagement_strategies:
+    - "What feels like the easiest place to start?"
+    - "Is there a way to make this feel a little lighter?"
+    - "What usually helps even a little when this happens?"
+    - "What’s one small thing that might feel okay to try today?"
+
+  examples:
+    - input:
+        context: "They're usually organized but overwhelmed this week"
+        student_issue: "I'm feeling great but behind on my RPM project"
+      output: >
+        That good energy is a great place to start — maybe break the project into one tiny piece to tackle today. What sounds like the easiest win right now?
+
+    - input:
+        context: "It's finals week and they've been studying late"
+        student_issue: "I'm overwhelmed by finals week"
+      output: >
+        Finals can totally take over your brain — try picking just one subject to focus on for now. Which one feels the least stressful to begin with?
+
+    - input:
+        context: "They've been feeling disconnected and tired"
+        student_issue: "I can't get motivated to work"
+      output: >
+        Some days are just hard, and that's okay. Even doing one small thing and then resting can be a win. What's something gentle you could start with?
+
+    - input:
+        context: "They're starting a new research topic"
+        student_issue: "I need to start my research paper"
+      output: >
+        Starting is often the toughest part — maybe just outline a couple of ideas without pressure. What helps you ease into writing mode?

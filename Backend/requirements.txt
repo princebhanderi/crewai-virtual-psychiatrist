@@ -1,0 +1,6 @@
+fastapi
+crewai
+python-dotenv
+motor
+uvicorn
+pydantic
