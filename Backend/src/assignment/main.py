@@ -9,7 +9,7 @@ from typing import Optional
 from dotenv import load_dotenv
 from crewai.crews.crew_output import CrewOutput
 from bson import ObjectId
-from assignment.crew import Assignment  
+from src.assignment.crew import Assignment  
 
 load_dotenv()
 
@@ -166,10 +166,3 @@ async def get_chat_history(user_id: str = Depends(get_current_user)):
         raise HTTPException(status_code=404, detail="Chat history not found")
 
     return {"user_id": user_id, "chat_history": chat_history["messages"]}
-
-def run():
-    import uvicorn
-    uvicorn.run("assignment.main:app", host="0.0.0.0", port=8000, reload=True)
-
-if __name__ == "__main__":
-    run()
