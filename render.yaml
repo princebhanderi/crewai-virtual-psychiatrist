@@ -1,5 +1,4 @@
 services:
-  # Backend Service
   - type: web
     name: psychiatrist-backend
     env: python
@@ -9,10 +8,12 @@ services:
     startCommand: "crewai run"
     envVars:
       - key: MONGO_URI
+        value: "mongodb+srv://bhanderiprince03_db_user:VbKVXbCPnOuSLm1z@cluster0.pgvlefg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
       - key: DB_NAME
+        value: "virtual_psychiatrist"
       - key: VITE_GOOGLE_API_KEY
+        value: "AIzaSyCGxv_Wa2v3kmtyaXMZhfNOjErfMrm2BVQ"
 
-  # Frontend Service
   - type: web
     name: psychiatrist-frontend
     env: node
@@ -22,3 +23,4 @@ services:
     startCommand: "npx serve -s dist -l 3000"
     envVars:
       - key: VITE_GOOGLE_API_KEY
+        value: "AIzaSyCGxv_Wa2v3kmtyaXMZhfNOjErfMrm2BVQ"
